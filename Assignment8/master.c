@@ -132,9 +132,16 @@ void reorder_output_file() {
             fprintf(file, "(%s)\n", entries[i].entry);
         }
     }
-
     fclose(file);
     free(entries);
+
+    //Printing all the lines in the file
+    file = fopen("results.txt", "r");
+    char c;
+    while ((c = fgetc(file)) != EOF) {
+        printf("%c", c);
+    }
+    fclose(file);
 }
 
 int main(int argc, char * argv[]) {
